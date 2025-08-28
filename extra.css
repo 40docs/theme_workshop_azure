@@ -220,29 +220,11 @@ html [data-md-color-scheme="slate"] .md-header,
         linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
 }
 
-/* NUCLEAR OPTION - Maximum specificity for tabs */
-html body .md-tabs,
-html body .md-tabs[data-md-component="tabs"],
-html body [data-md-color-scheme] .md-tabs,
-html body [data-md-color-scheme="default"] .md-tabs,
-html body [data-md-color-scheme="slate"] .md-tabs,
-html .md-tabs,
-html .md-tabs[data-md-component="tabs"],
-html [data-md-color-scheme] .md-tabs,
-html [data-md-color-scheme="default"] .md-tabs,
-html [data-md-color-scheme="slate"] .md-tabs,
+/* Make tabs transparent to match header gradient seamlessly */
 .md-tabs,
 .md-tabs[data-md-component="tabs"] {
-    background: 
-        radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
-        radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
-        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    background: transparent !important;
     background-color: transparent !important;
-    /* Force visible background as fallback */
-    background-image: 
-        radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
-        radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
-        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
 }
 
 /* NUCLEAR OPTION - Ensure all nested header elements are transparent */
@@ -276,4 +258,24 @@ html .md-tabs__list,
 .md-tabs__link:hover {
     color: white !important;
     opacity: 1;
+}
+
+/* FOOTER GRADIENT - Seamless continuation from body gradient bottom colors */
+.md-footer {
+    background: 
+        radial-gradient(ellipse at top center, rgba(30, 75, 153, 0.9) 0%, rgba(30, 75, 153, 0.6) 30%, rgba(30, 75, 153, 1) 100%),
+        radial-gradient(ellipse 120% 80% at top, rgba(48, 127, 226, 0.3) 0%, rgba(48, 127, 226, 0.1) 50%, rgba(48, 127, 226, 0.4) 100%),
+        linear-gradient(180deg, #0f2027 0%, #16213e 20%, #0a1a24 60%, #051015 100%) !important;
+    background-color: transparent !important;
+}
+
+/* Footer text visibility on gradient */
+.md-footer,
+.md-footer__inner,
+.md-footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.md-footer a:hover {
+    color: white !important;
 }
