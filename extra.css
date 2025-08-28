@@ -248,34 +248,36 @@ html .md-tabs__list,
     background-image: none !important;
 }
 
-/* Ensure tab text is visible on gradient */
+/* Hands on Lab text adapts to light/dark mode */
 .md-tabs__link {
-    color: white !important;
+    color: var(--md-default-fg-color) !important;
     opacity: 0.9;
 }
 
 .md-tabs__link--active,
 .md-tabs__link:hover {
-    color: white !important;
+    color: var(--md-default-fg-color) !important;
     opacity: 1;
+    font-weight: 500;
 }
 
-/* FOOTER GRADIENT - Seamless continuation from body gradient bottom colors */
+/* SEAMLESS FOOTER GRADIENT - Start dark at bottom, lighten to match body */
 .md-footer {
     background: 
-        radial-gradient(ellipse at top center, rgba(30, 75, 153, 0.9) 0%, rgba(30, 75, 153, 0.6) 30%, rgba(30, 75, 153, 1) 100%),
-        radial-gradient(ellipse 120% 80% at top, rgba(48, 127, 226, 0.3) 0%, rgba(48, 127, 226, 0.1) 50%, rgba(48, 127, 226, 0.4) 100%),
-        linear-gradient(180deg, #0f2027 0%, #16213e 20%, #0a1a24 60%, #051015 100%) !important;
+        radial-gradient(ellipse at bottom center, rgba(15, 32, 39, 1) 0%, rgba(30, 75, 153, 0.9) 80%, rgba(30, 75, 153, 0.6) 100%),
+        linear-gradient(0deg, #051015 0%, #0a1a24 30%, #0f2027 70%, rgba(15, 32, 39, 0.8) 100%) !important;
     background-color: transparent !important;
 }
 
-/* Footer text visibility on gradient */
+/* Footer text adapts to light/dark mode like other elements */
 .md-footer,
 .md-footer__inner,
 .md-footer a {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: var(--md-default-fg-color) !important;
+    opacity: 0.8;
 }
 
 .md-footer a:hover {
-    color: white !important;
+    color: var(--md-default-fg-color) !important;
+    opacity: 1;
 }
