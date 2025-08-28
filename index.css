@@ -12,11 +12,9 @@ body {
     position: relative;
 }
 
-/* Navigation tabs start the gradient flow - Force override Material theme */
-.md-tabs,
-.md-tabs[data-md-component="tabs"],
-nav.md-tabs,
-nav.md-tabs[data-md-component="tabs"] {
+/* Apply gradient to the entire header area (logo, search, tabs) */
+.md-header,
+.md-header[data-md-component="header"] {
     background: 
         radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
         radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
@@ -24,21 +22,22 @@ nav.md-tabs[data-md-component="tabs"] {
     background-color: transparent !important;
 }
 
-/* Override any Material theme background colors on all nested elements */
+/* Also apply to navigation tabs area for consistency */
+.md-tabs,
+.md-tabs[data-md-component="tabs"] {
+    background: 
+        radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
+        radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
+        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    background-color: transparent !important;
+}
+
+/* Ensure all nested header elements are transparent */
+.md-header .md-header__inner,
 .md-tabs .md-grid,
-.md-tabs .md-tabs__list,
-.md-tabs__list {
+.md-tabs .md-tabs__list {
     background: transparent !important;
     background-color: transparent !important;
-}
-
-/* Override Material theme color variables for tabs */
-[data-md-color-primary] .md-tabs,
-[data-md-color-scheme] .md-tabs {
-    background: 
-        radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
-        radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
-        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
 }
 
 /* Ensure tab text is visible on gradient */
