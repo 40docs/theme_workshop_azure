@@ -12,6 +12,28 @@ body {
     position: relative;
 }
 
+/* Extend gradient to navigation tabs for seamless look */
+.md-tabs {
+    background: 
+        radial-gradient(ellipse at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0) 50%),
+        radial-gradient(ellipse at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0) 50%),
+        radial-gradient(ellipse at bottom center, rgba(30, 75, 153, 0.9) 0%, rgba(30, 75, 153, 0) 70%),
+        radial-gradient(ellipse at center, rgba(48, 127, 226, 0.3) 0%, rgba(48, 127, 226, 0) 60%),
+        linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f2027 100%);
+}
+
+/* Ensure tab text is visible on gradient */
+.md-tabs__link {
+    color: white !important;
+    opacity: 0.9;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+    color: white !important;
+    opacity: 1;
+}
+
 /* Center Fortinet logo on background */
 .md-content::before {
     content: '';
