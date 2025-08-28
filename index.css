@@ -12,7 +12,12 @@ body {
     position: relative;
 }
 
-/* Apply gradient to the entire header area (logo, search, tabs) */
+/* AGGRESSIVE override - Apply gradient to the entire header area (logo, search, tabs) */
+html .md-header,
+html .md-header[data-md-component="header"],
+html [data-md-color-scheme] .md-header,
+html [data-md-color-scheme="default"] .md-header,
+html [data-md-color-scheme="slate"] .md-header,
 .md-header,
 .md-header[data-md-component="header"] {
     background: 
@@ -22,7 +27,12 @@ body {
     background-color: transparent !important;
 }
 
-/* Also apply to navigation tabs area for consistency */
+/* AGGRESSIVE override - Also apply to navigation tabs area for consistency */
+html .md-tabs,
+html .md-tabs[data-md-component="tabs"],
+html [data-md-color-scheme] .md-tabs,
+html [data-md-color-scheme="default"] .md-tabs,
+html [data-md-color-scheme="slate"] .md-tabs,
 .md-tabs,
 .md-tabs[data-md-component="tabs"] {
     background: 
@@ -32,10 +42,17 @@ body {
     background-color: transparent !important;
 }
 
-/* Ensure all nested header elements are transparent */
+/* AGGRESSIVE override - Ensure all nested header elements are transparent */
+html .md-header .md-header__inner,
+html .md-header__inner,
+html .md-tabs .md-grid,
+html .md-tabs .md-tabs__list,
+html .md-tabs__list,
 .md-header .md-header__inner,
+.md-header__inner,
 .md-tabs .md-grid,
-.md-tabs .md-tabs__list {
+.md-tabs .md-tabs__list,
+.md-tabs__list {
     background: transparent !important;
     background-color: transparent !important;
 }
