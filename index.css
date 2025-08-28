@@ -21,7 +21,7 @@ body {
     transform: translate(-50%, -50%);
     width: 400px;
     height: 200px;
-    background-image: url('theme/fortinetlogo.svg');
+    background-image: url('fortinetlogo.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
