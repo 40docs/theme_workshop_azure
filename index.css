@@ -13,11 +13,17 @@ body {
 }
 
 /* Navigation tabs start the gradient flow */
-.md-tabs {
+.md-tabs,
+.md-tabs[data-md-component="tabs"] {
     background: 
         radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
         radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
-        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+/* Override any Material theme background colors */
+.md-tabs .md-grid {
+    background: transparent !important;
 }
 
 /* Ensure tab text is visible on gradient */
