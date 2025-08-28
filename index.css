@@ -1,7 +1,7 @@
 body {
     background: 
-        radial-gradient(ellipse at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0) 50%),
-        radial-gradient(ellipse at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0) 50%),
+        radial-gradient(ellipse 120% 80% at top left, rgba(180, 36, 42, 0.3) 20%, rgba(180, 36, 42, 0) 60%),
+        radial-gradient(ellipse 120% 80% at top right, rgba(44, 204, 211, 0.3) 20%, rgba(44, 204, 211, 0) 60%),
         radial-gradient(ellipse at bottom center, rgba(30, 75, 153, 0.9) 0%, rgba(30, 75, 153, 0) 70%),
         radial-gradient(ellipse at center, rgba(48, 127, 226, 0.3) 0%, rgba(48, 127, 226, 0) 60%),
         linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f2027 100%);
@@ -12,11 +12,11 @@ body {
     position: relative;
 }
 
-/* Navigation tabs show only upper portion of gradient */
+/* Navigation tabs start the gradient flow */
 .md-tabs {
     background: 
-        radial-gradient(ellipse at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 30%, rgba(180, 36, 42, 0) 60%),
-        radial-gradient(ellipse at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 30%, rgba(44, 204, 211, 0) 60%),
+        radial-gradient(ellipse 100% 200% at top left, rgba(180, 36, 42, 0.8) 0%, rgba(180, 36, 42, 0.4) 50%, rgba(180, 36, 42, 0.1) 100%),
+        radial-gradient(ellipse 100% 200% at top right, rgba(44, 204, 211, 0.8) 0%, rgba(44, 204, 211, 0.4) 50%, rgba(44, 204, 211, 0.1) 100%),
         linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
