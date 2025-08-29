@@ -116,12 +116,7 @@ border-radius: .5rem;
   --md-accent-bg-color--light: #da291c;
 }
 
-[data-md-color-scheme="default"] .logo-dark {
-  display: none !important;
-}
-[data-md-color-scheme="slate"] .logo-light {
-  display: none !important;
-}
+/* Logo CSS removed - using mkdocs.yml configuration for logo switching */
 
 [dir=ltr] .md-header__title {
     margin-left: 124px;
@@ -175,18 +170,20 @@ img {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove border from logo */
+.md-header__button.md-logo img {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 img.twemoji {
   border: 0px; /* 1-pixel solid border with black color */
   border-radius: 0px;
   box-shadow: none;
 }
 
-img.logo-light,
-img.logo-dark {
-    border: none;          /* Remove border */
-    border-radius: 0;      /* Remove rounded corners */
-    box-shadow: none;
-}
+/* Logo styling removed - handled by mkdocs.yml */
 
 .grid.cards img {
     border: none;
@@ -261,25 +258,129 @@ html .md-tabs__list,
     font-weight: 500;
 }
 
-/* SEAMLESS FOOTER GRADIENT - Better blending with body colors */
-.md-footer {
-    background: 
-        radial-gradient(ellipse at bottom center, rgba(30, 75, 153, 0.95) 0%, rgba(30, 75, 153, 0.7) 60%, rgba(30, 75, 153, 0.4) 90%, transparent 100%),
-        radial-gradient(ellipse 120% 60% at bottom left, rgba(180, 36, 42, 0.2) 0%, rgba(180, 36, 42, 0.1) 50%, transparent 80%),
-        radial-gradient(ellipse 120% 60% at bottom right, rgba(44, 204, 211, 0.2) 0%, rgba(44, 204, 211, 0.1) 50%, transparent 80%),
-        linear-gradient(0deg, #0f2027 0%, #16213e 40%, #1a1a2e 80%, transparent 100%) !important;
-    background-color: transparent !important;
+/* Define custom properties for footer gradient */
+:root {
+    --footer-gradient: 
+        radial-gradient(ellipse at top center, rgba(30, 75, 153, 0.7) 0%, rgba(30, 75, 153, 0.3) 40%, rgba(30, 75, 153, 0.1) 70%, transparent 100%),
+        radial-gradient(ellipse 70% 100% at bottom left, rgba(15, 30, 50, 0.7) 0%, rgba(20, 40, 60, 0.5) 30%, rgba(25, 50, 80, 0.3) 60%, transparent 100%),
+        radial-gradient(ellipse 70% 100% at bottom right, rgba(20, 50, 70, 0.7) 0%, rgba(25, 60, 90, 0.5) 30%, rgba(30, 70, 110, 0.3) 60%, transparent 100%),
+        linear-gradient(180deg, rgba(15, 32, 39, 0.6) 0%, rgba(15, 32, 39, 0.4) 40%, rgba(15, 32, 39, 0.2) 80%, transparent 100%);
 }
 
-/* Footer text adapts to light/dark mode like other elements */
+/* Apply gradient only to main footer container */
 .md-footer,
-.md-footer__inner,
-.md-footer a {
-    color: var(--md-default-fg-color) !important;
-    opacity: 0.8;
+html .md-footer,
+html body .md-footer,
+[data-md-color-scheme] .md-footer,
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="slate"] .md-footer,
+html [data-md-color-scheme="slate"] .md-footer,
+html [data-md-color-scheme="default"] .md-footer,
+body[data-md-color-scheme="slate"] .md-footer,
+body[data-md-color-scheme="default"] .md-footer,
+html body [data-md-color-scheme="slate"] .md-footer,
+html body [data-md-color-scheme="default"] .md-footer {
+    background: var(--footer-gradient) !important;
+    background-color: transparent !important;
+    background-image: var(--footer-gradient) !important;
 }
 
-.md-footer a:hover {
-    color: var(--md-default-fg-color) !important;
-    opacity: 1;
+/* Force all footer child elements to be transparent - no individual gradients */
+.md-footer *,
+.md-footer__inner,
+.md-footer-meta,
+.md-footer-meta__inner,
+.md-footer-copyright,
+.md-footer-social,
+html .md-footer *,
+html body .md-footer *,
+[data-md-color-scheme="default"] .md-footer *,
+[data-md-color-scheme="slate"] .md-footer *,
+html [data-md-color-scheme="slate"] .md-footer *,
+html [data-md-color-scheme="default"] .md-footer *,
+body[data-md-color-scheme="slate"] .md-footer *,
+body[data-md-color-scheme="default"] .md-footer *,
+html body [data-md-color-scheme="slate"] .md-footer *,
+html body [data-md-color-scheme="default"] .md-footer * {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Override any Material theme dark mode footer rules */
+[data-md-color-scheme="slate"] {
+    --md-footer-bg-color: transparent !important;
+    --md-footer-bg-color--dark: transparent !important;
+}
+
+/* Additional nuclear option - inline style simulation */
+.md-footer[style*="background"] {
+    background: var(--footer-gradient) !important;
+}
+
+/* Footer text - Light mode: lighter gray, Dark mode: white like header */
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="default"] .md-footer__inner,
+[data-md-color-scheme="default"] .md-footer__inner *,
+[data-md-color-scheme="default"] .md-footer a,
+[data-md-color-scheme="default"] .md-footer-meta,
+[data-md-color-scheme="default"] .md-footer-meta__inner,
+[data-md-color-scheme="default"] .md-footer-meta__inner *,
+[data-md-color-scheme="default"] .md-footer-copyright,
+[data-md-color-scheme="default"] .md-footer-copyright *,
+[data-md-color-scheme="default"] .md-footer-social,
+[data-md-color-scheme="default"] .md-footer-social * {
+    color: rgba(145, 145, 145, 0.9) !important;  /* Light mode: darker grey text */
+}
+
+[data-md-color-scheme="slate"] .md-footer,
+[data-md-color-scheme="slate"] .md-footer__inner,
+[data-md-color-scheme="slate"] .md-footer__inner *,
+[data-md-color-scheme="slate"] .md-footer a,
+[data-md-color-scheme="slate"] .md-footer-meta,
+[data-md-color-scheme="slate"] .md-footer-meta__inner,
+[data-md-color-scheme="slate"] .md-footer-meta__inner *,
+[data-md-color-scheme="slate"] .md-footer-copyright,
+[data-md-color-scheme="slate"] .md-footer-copyright *,
+[data-md-color-scheme="slate"] .md-footer-social,
+[data-md-color-scheme="slate"] .md-footer-social * {
+    color: rgba(255, 255, 255, 0.9) !important;  /* Dark mode: white text like header */
+}
+
+/* Ensure "Made with Material for MkDocs" has uniform color */
+[data-md-color-scheme="default"] .md-footer-meta__inner span,
+[data-md-color-scheme="default"] .md-footer-meta__inner a,
+[data-md-color-scheme="default"] .md-footer-copyright__highlight {
+    color: rgba(145, 145, 145, 0.9) !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta__inner span,
+[data-md-color-scheme="slate"] .md-footer-meta__inner a,
+[data-md-color-scheme="slate"] .md-footer-copyright__highlight {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Hover states */
+[data-md-color-scheme="default"] .md-footer a:hover,
+[data-md-color-scheme="default"] .md-footer-meta__inner a:hover {
+    color: rgba(165, 165, 165, 1) !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer a:hover,
+[data-md-color-scheme="slate"] .md-footer-meta__inner a:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Social icons use the same color */
+[data-md-color-scheme="default"] .md-footer-social__link svg {
+    fill: rgba(145, 145, 145, 0.9) !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer-social__link svg {
+    fill: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-md-color-scheme="default"] .md-footer-social__link:hover svg,
+[data-md-color-scheme="slate"] .md-footer-social__link:hover svg {
+    fill: rgba(255, 255, 255, 1) !important;
 }
