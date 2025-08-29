@@ -261,11 +261,13 @@ html .md-tabs__list,
     font-weight: 500;
 }
 
-/* SEAMLESS FOOTER GRADIENT - Start dark at bottom, lighten to match body */
+/* SEAMLESS FOOTER GRADIENT - Better blending with body colors */
 .md-footer {
     background: 
-        radial-gradient(ellipse at bottom center, rgba(15, 32, 39, 1) 0%, rgba(30, 75, 153, 0.9) 80%, rgba(30, 75, 153, 0.6) 100%),
-        linear-gradient(0deg, #051015 0%, #0a1a24 30%, #0f2027 70%, rgba(15, 32, 39, 0.8) 100%) !important;
+        radial-gradient(ellipse at bottom center, rgba(30, 75, 153, 0.95) 0%, rgba(30, 75, 153, 0.7) 60%, rgba(30, 75, 153, 0.4) 90%, transparent 100%),
+        radial-gradient(ellipse 120% 60% at bottom left, rgba(180, 36, 42, 0.2) 0%, rgba(180, 36, 42, 0.1) 50%, transparent 80%),
+        radial-gradient(ellipse 120% 60% at bottom right, rgba(44, 204, 211, 0.2) 0%, rgba(44, 204, 211, 0.1) 50%, transparent 80%),
+        linear-gradient(0deg, #0f2027 0%, #16213e 40%, #1a1a2e 80%, transparent 100%) !important;
     background-color: transparent !important;
 }
 
