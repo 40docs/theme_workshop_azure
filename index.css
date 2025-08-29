@@ -1,4 +1,10 @@
 /* HOME PAGE ONLY - Full gradient background */
+
+/* Remove margins on home page only */
+.md-grid {
+    max-width: unset !important;
+}
+
 body {
     background: 
         radial-gradient(ellipse 120% 80% at top left, rgba(180, 36, 42, 0.3) 20%, rgba(180, 36, 42, 0) 60%),

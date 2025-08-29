@@ -129,10 +129,20 @@ border-radius: .5rem;
     margin-left: 15px;
 }
 
-.md-grid {
+/* Default Material margins for content only, not header */
+.md-content .md-grid,
+.md-footer .md-grid {
     margin-left: auto;
     margin-right: auto;
-    max-width: unset;
+    max-width: 61rem; /* Default Material for MkDocs max-width */
+}
+
+/* Header should always be full width */
+.md-header .md-grid,
+.md-tabs .md-grid {
+    max-width: unset !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .md-header__topic {
